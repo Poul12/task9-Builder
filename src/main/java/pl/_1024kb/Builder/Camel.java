@@ -7,9 +7,8 @@ public class Camel
     private int age;
     private Gender gender;
     private float weight;
-    private float size;
-    private String furColor;
     private float height;
+    private String furColor;
 
     public static NeedId builder()
     {
@@ -23,9 +22,8 @@ public class Camel
         private int age;
         private Gender gender;
         private float weight;
-        private float size;
-        private String furColor;
         private float height;
+        private String furColor;
 
         @Override
         public Builder id(long id)
@@ -63,9 +61,9 @@ public class Camel
         }
 
         @Override
-        public Builder size(float size)
+        public Builder height(float height)
         {
-            this.size = size;
+            this.height = height;
             return this;
         }
 
@@ -73,13 +71,6 @@ public class Camel
         public Builder furColor(String furColor)
         {
             this.furColor = furColor;
-            return this;
-        }
-
-        @Override
-        public Builder height(float height)
-        {
-            this.height = height;
             return this;
         }
 
@@ -97,9 +88,8 @@ public class Camel
             camel.age = this.age;
             camel.gender = this.gender;
             camel.weight = this.weight;
-            camel.size = this.size;
-            camel.furColor = this.furColor;
             camel.height = this.height;
+            camel.furColor = this.furColor;
 
             return camel;
         }
@@ -123,7 +113,6 @@ public class Camel
     public interface NeedGender
     {
         AndNext gender(Gender gender);
-        //CanBeBuild and();
     }
 
     public interface AndNext
@@ -134,9 +123,8 @@ public class Camel
     public interface CanBeBuild
     {
         CanBeBuild weight(float weight);
-        CanBeBuild size(float size);
-        CanBeBuild furColor(String furColor);
         CanBeBuild height(float height);
+        CanBeBuild furColor(String furColor);
 
         Camel build();
     }
@@ -149,8 +137,7 @@ public class Camel
                 + age + "-"
                 + gender + "-"
                 + weight + "-"
-                + size + "-"
-                + furColor + "-"
-                + height;
+                + height + "-"
+                + furColor;
     }
 }
